@@ -3,5 +3,7 @@
 <%= f.input :description, as: :text, required: true %>
 <%= f.input :schedule, as: :text, required: true %>
 <%= f.input :venue_id, collection: Venue.by_name, as: :select, label_method: :name, value_method: :id, required: true %>
+<%= f.collection_select  :difficulty, Activity::DIFFICULTIES, :first , :last, :include_blank => false %>
+<%= f.text_field :tag_list %>
 <%= f.button :submit %>
 <% end %>

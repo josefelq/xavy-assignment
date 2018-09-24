@@ -5,7 +5,18 @@
         <%= activity.name %>
       </h5>
       <p class="card-text">
-        <%= activity.description %>
+        <%= activity.description %>  <br>
+        <% if !(activity.difficulty.nil? || activity.difficulty == 0)  %>
+          <strong>Dificultad: </strong>
+          <%= Activity::DIFFICULTIES[activity.difficulty] %>
+          <br>
+        <% else %>
+
+        <% end %>
+        <% activity.tag_list.each do |tag| %>
+          <span class="badge badge-secondary"><%= tag %></span>
+        <% end %>
+
       </p>
     </div>
   </div>

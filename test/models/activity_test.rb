@@ -2,17 +2,22 @@
 #
 # Table name: activities
 #
-#  id          :integer          not null, primary key
-#  description :text
-#  name        :string
-#  schedule    :text
+#  id          :bigint(8)        not null, primary key
+#  description :text(65535)
+#  difficulty  :integer
+#  name        :string(255)
+#  schedule    :text(65535)
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
-#  venue_id    :integer
+#  venue_id    :bigint(8)
 #
 # Indexes
 #
 #  index_activities_on_venue_id  (venue_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (venue_id => venues.id)
 #
 
 require 'test_helper'

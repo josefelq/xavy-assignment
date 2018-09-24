@@ -11,6 +11,14 @@
   <td>
     <%= activity.schedule %>
   </td>
+  <td>
+    <%= Activity::DIFFICULTIES[activity.difficulty] %>
+  </td>
+  <td>
+    <% activity.tag_list.each do |tag| %>
+      <span class="badge badge-secondary"><%= tag %></span>
+    <% end %>
+  </td>
   <td class="text-right">
     <%= link_to 'Editar', edit_admin_activity_path(activity), class: 'btn btn-outline-dark' %>
     <%= link_to 'Destruir', admin_activity_path(activity), class: 'btn btn-outline-danger', method: :delete, data: {confirm: '¿Está seguro?'} %>
